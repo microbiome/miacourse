@@ -24,9 +24,6 @@ geometry:
 <a href="https://bioconductor.org"><img src="`r rebook::BiocSticker('animated')`" width="200" alt="Bioconductor Sticker" align="right" style="margin: 0 1em 0 1em" /></a>
 
 
-
-# Overview
-
 ## Schedule
 
 Download the [full schedule](SPARCworkshop2023schedule.pdf).
