@@ -145,7 +145,7 @@ packages <- c(bioc_pkg, cran_pkg)
 packages_to_install <- c( bioc_pkg_to_be_installed, cran_pkg_to_be_installed, cran_pkg_to_be_installed)
 ```
 
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE, message = FALSE, eval=FALSE}
 # If there are packages that need to be installed, install them 
 if( length(packages_to_install) ) {
    BiocManager::install(packages_to_install)
