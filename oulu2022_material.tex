@@ -1,0 +1,364 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  oneside]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=30mm,left=15mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Microbiome data science with R/Bioconductor},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Microbiome data science with R/Bioconductor}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{overview}{%
+\chapter{Overview}\label{overview}}
+
+\hypertarget{schedule}{%
+\section{Schedule}\label{schedule}}
+
+Download the \href{SPARCworkshop2023schedule.pdf}{full schedule}.
+
+The schedule is summarized as follows.
+
+\begin{itemize}
+\tightlist
+\item
+  Day 1 (Tue) - Symposium; online lectures and no hands-on session
+\item
+  Day 2 (Wed) - Online lectures; hands-on session on \textbf{R/Bioconductor framework}
+\item
+  Day 3 (Thu) - Online lectures; hands-on session on \textbf{microbiome data analysis methods}
+\item
+  Day 4 (Fri) - Online lectures; advanced microbiome \textbf{data analysis methods}
+\end{itemize}
+
+\hypertarget{learning-goals}{%
+\section{Learning goals}\label{learning-goals}}
+
+This course will teach the \textbf{basics of microbiome data analysis and
+integration with R/Bioconductor}, a popular open source environment
+for scientific data analysis.
+
+You will get an overview of the reproducible data analysis workflow,
+with recent examples from published studies.
+
+After the course you will know how to approach new tasks in microbiome
+data science by utilizing the available R tools and documentation. In
+particular, you understand the concepts of data containers,
+reproducible workflows, and standard concepts in microbiome data
+analysis.
+
+\hypertarget{target-audience}{%
+\section{Target audience}\label{target-audience}}
+
+The course is primarily designed for advanced MSc and PhD students,
+Postdocs, and biomedical researchers who wish to learn and develop new
+skills in scientific programming and microbiome data science.
+Academic students and researchers from Finland and abroad are welcome
+and encouraged to apply. The course has limited capacity, and priority
+will given for local students.
+
+\textbf{Expected background} Earlier experience with R or another
+programming language is expected. The teaching format allows
+adaptations according to the student's learning speed.
+
+\hypertarget{learning-material}{%
+\section{Learning material}\label{learning-material}}
+
+The teaching builds on the open online tutorial, Orchestrating
+Microbiome Analysis (\url{https://microbiome.github.io/OMA}). The openly
+licensed teaching material will be available online during and after
+the course, following \href{https://edition.fi/tsv/catalog/book/421}{recommendations on open education}.
+
+The training material walks you through the standard steps of
+microbiome data analysis covering data import, processing,
+exploration, analysis, visualization, reproducible reporting, and best
+practices in open science. We teach generic data analytical skills
+that are applicable to common data analysis tasks encountered in
+modern omics research. The teaching format allows adaptations
+according to the student's learning speed.
+
+Link to online Gitter chat:
+\url{https://microbiome.github.io}
+
+\hypertarget{checklist-preparing-for-the-course}{%
+\chapter{Checklist: preparing for the course}\label{checklist-preparing-for-the-course}}
+
+\hypertarget{questionnaire-on-the-background-of-participants}{%
+\section{Questionnaire on the background of participants}\label{questionnaire-on-the-background-of-participants}}
+
+Fill in the anonymous \href{https://forms.gle/XZdiEyGyYtLKYwqp8}{questionnaire}.
+
+This information will help us to understand the background of the
+participants better, and adjust teaching accordingly.
+
+\hypertarget{packages}{%
+\section{Installing the required R/Bioconductor packages}\label{packages}}
+
+Install the required software in advance.
+
+\begin{itemize}
+\item
+  \href{https://www.r-project.org/}{R (it is critical to use the latest official release!)}
+\item
+  \href{https://www.rstudio.com/products/rstudio/download/}{RStudio};
+  choose ``Rstudio Desktop'' to download the latest version. For further
+  details, check the \href{https://www.rstudio.com/}{Rstudio home page}.
+\item
+  Install and load the required R packages (see below)
+\item
+  After a successful installation you can start with the
+  case study examples in the training material
+\end{itemize}
+
+\hypertarget{required-rbioconductor-packages}{%
+\subsection{Required R/Bioconductor packages}\label{required-rbioconductor-packages}}
+
+This section shows how to install and load all required packages into
+the R session, if needed. Only uninstalled packages are installed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# List of packages that we need from cran and bioc }
+\NormalTok{cran\_pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{, }\StringTok{"dplyr"}\NormalTok{, }\StringTok{"ecodist"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }
+              \StringTok{"gridExtra"}\NormalTok{, }\StringTok{"kableExtra"}\NormalTok{,  }\StringTok{"knitr"}\NormalTok{, }\StringTok{"scales"}\NormalTok{, }\StringTok{"vegan"}\NormalTok{, }\StringTok{"matrixStats"}\NormalTok{)}
+\NormalTok{bioc\_pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"yulab.utils"}\NormalTok{,}\StringTok{"ggtree"}\NormalTok{,}\StringTok{"ANCOMBC"}\NormalTok{, }\StringTok{"ape"}\NormalTok{, }\StringTok{"DESeq2"}\NormalTok{, }\StringTok{"DirichletMultinomial"}\NormalTok{, }\StringTok{"mia"}\NormalTok{, }\StringTok{"miaViz"}\NormalTok{, }\StringTok{"miaSim"}\NormalTok{)}
+\NormalTok{github\_pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"miaTime"}\NormalTok{)}
+
+
+\CommentTok{\# Get those packages that are already installed}
+\NormalTok{cran\_pkg\_already\_installed }\OtherTok{\textless{}{-}}\NormalTok{ cran\_pkg[ cran\_pkg }\SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{() ]}
+\NormalTok{bioc\_pkg\_already\_installed }\OtherTok{\textless{}{-}}\NormalTok{ bioc\_pkg[ bioc\_pkg }\SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{() ]}
+\NormalTok{github\_pkg\_already\_installed }\OtherTok{\textless{}{-}}\NormalTok{ github\_pkg[ github\_pkg }\SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{() ]}
+
+\CommentTok{\# Get those packages that need to be installed}
+\NormalTok{cran\_pkg\_to\_be\_installed }\OtherTok{\textless{}{-}} \FunctionTok{setdiff}\NormalTok{(cran\_pkg, cran\_pkg\_already\_installed)}
+\NormalTok{bioc\_pkg\_to\_be\_installed }\OtherTok{\textless{}{-}} \FunctionTok{setdiff}\NormalTok{(bioc\_pkg, bioc\_pkg\_already\_installed)}
+\NormalTok{github\_pkg\_to\_be\_installed }\OtherTok{\textless{}{-}} \FunctionTok{setdiff}\NormalTok{(github\_pkg, github\_pkg\_already\_installed)}
+
+\CommentTok{\# Reorders bioc packages, so that mia and miaViz are first}
+\NormalTok{bioc\_pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(bioc\_pkg[ bioc\_pkg }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"mia"}\NormalTok{, }\StringTok{"miaViz"}\NormalTok{) ], }
+\NormalTok{              bioc\_pkg[ }\SpecialCharTok{!}\NormalTok{bioc\_pkg }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"mia"}\NormalTok{, }\StringTok{"miaViz"}\NormalTok{) ] ) }
+
+\CommentTok{\# Combine to one vector}
+\NormalTok{packages }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(bioc\_pkg, cran\_pkg)}
+\NormalTok{packages\_to\_install }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( bioc\_pkg\_to\_be\_installed, cran\_pkg\_to\_be\_installed, cran\_pkg\_to\_be\_installed)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# If there are packages that need to be installed, install them }
+\ControlFlowTok{if}\NormalTok{( }\FunctionTok{length}\NormalTok{(packages\_to\_install) ) \{}
+\NormalTok{   BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(packages\_to\_install)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Now all required packages are installed, so let's load them into the session.
+Some function names occur in multiple packages. That is why miaverse's packages
+mia and miaViz are prioritized. Packages that are loaded first have higher priority.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Loading all packages into session. Returns true if package was successfully loaded.}
+\NormalTok{loaded }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(packages, require, }\AttributeTok{character.only =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{as.data.frame}\NormalTok{(loaded)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{reading-and-support}{%
+\section{Reading and support}\label{reading-and-support}}
+
+\begin{itemize}
+\item
+  View the short online videos on \href{https://www.youtube.com/playlist?list=PLjiXAZO27elAJEptP59BN3whVJ61XIkST}{R/Bioconductor microbiome data science tools}.
+\item
+  Check the Appendix chapter of the \href{https://microbiome.github.io/OMA}{OMA
+  book}. In particular, read Chapter
+  15.3 on reproducible reporting.
+\item
+  \textbf{You can run the workflows by simply copy-pasting the examples.} For
+  further, advanced material, you can test and modify further examples
+  from the book, and apply these techniques to your own data.
+\item
+  Online support on installation and other matters, join us at \href{https://gitter.im/microbiome/miaverse?utm_source=badge\&utm_medium=badge\&utm_campaign=pr-badge\&utm_content=badge}{Gitter}
+\end{itemize}
+
+\hypertarget{acknowledgments}{%
+\chapter{Acknowledgments}\label{acknowledgments}}
+
+\hypertarget{teachers-and-organizers}{%
+\section{Teachers and organizers}\label{teachers-and-organizers}}
+
+\begin{itemize}
+\item
+  \href{https://datascience.utu.fi}{Leo Lahti} is the main teacher and
+  Associate Professor in Data Science at the University of Turku,
+  Finland, with specialization on microbiome research.
+\item
+  Prof.~Richa Ashma; local organizer.
+\item
+  Doctoral candidate Renuka Potbhare; course assistant
+\end{itemize}
+
+\hypertarget{support}{%
+\section{Support}\label{support}}
+
+The course is funded by SPARC, and jointly organized by:
+
+\begin{itemize}
+\tightlist
+\item
+  Savitribai Phule Pune University, Pune, India
+\item
+  Department of Computing, University of Turku, Finland
+\item
+  CompLifeSci Biocity Research Program, Turku, Finland
+\end{itemize}
+
+The teaching materials have been developed with support from
+
+\begin{itemize}
+\tightlist
+\item
+  ML4microbiome COST action
+\item
+  Horizon/RIA project FindingPheno
+\item
+  CompLifeSci Biocity Research Program, Turku, Finland
+\item
+  Turku University Foundation
+\item
+  Academy of Finland
+\end{itemize}
+
+\textbf{Citation} We thank all \href{https://microbiome.github.io}{developers and contributors} who have contributed open resources that supported the development of the training material. Kindly cite the course material as \citet{miacourse}
+
+\textbf{License and source code}
+
+All material is released under the open \href{LICENSE}{CC BY-NC-SA 3.0
+License} and available online during and after the course,
+following the \href{https://avointiede.fi/fi/linjaukset-ja-aineistot/kotimaiset-linjaukset/oppimisen-ja-oppimateriaalien-avoimuuden-linjaus}{recommendations on open teaching
+materials}
+of the national open science coordination in Finland**.
+
+  \bibliography{packages.bib}
+
+\end{document}
